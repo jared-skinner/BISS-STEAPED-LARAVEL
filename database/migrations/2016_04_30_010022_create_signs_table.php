@@ -14,7 +14,11 @@ class CreateSignsTable extends Migration
     {
         Schema::create('signs', function (Blueprint $table) {
             $table->increments('id');
-            $table->
+            $table->string('comment');
+            $table->string('route');
+            $table->string('ordered_by');
+            $table->enum('brand' , ['PepsiCo','Rockstar','DPSG','Jarritos','Other']);
+            $table->double('price' , 6,2);
             $table->timestamps();
         });
     }
