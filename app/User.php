@@ -32,4 +32,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Task::class);
     }
+
+    public function signs()
+    {
+        return $this->hasMany(Sign::class);
+    }
 }
