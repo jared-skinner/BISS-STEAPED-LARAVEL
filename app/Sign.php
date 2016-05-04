@@ -17,7 +17,7 @@ class Sign extends Model
 
     // auto-fillable stuffs
     protected $fillable = [
-        'comment', 'route', 'ordered_by', 'brand', 'price',
+        'description', 'route', 'ordered_by', 'brand', 'price',
     ];
 
      /**

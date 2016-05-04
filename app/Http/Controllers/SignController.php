@@ -55,7 +55,7 @@ class SignController extends Controller
     {
         $this->validate($request, [
             'description' => 'required|max:255',
-            'ordered-by' => 'required|max:255',
+            'ordered_by' => 'required|max:255',
             'route' => 'required|max:255',
             'brand' => 'required|max:255',
             'price' => 'numeric|required|max:999999.99',
@@ -63,7 +63,7 @@ class SignController extends Controller
 
         $request->user()->signs()->create([
             'description' => $request->description,
-            'ordered-by' => $request->ordered_by,
+            'ordered_by' => $request->ordered_by,
             'route' => $request->route,
             'brand' => $request->brand,
             'price' => $request->price,

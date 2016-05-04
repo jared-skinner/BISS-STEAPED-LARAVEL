@@ -28,7 +28,7 @@
                         <div class="form-group">
                             <label for="sign-ordered-by" class="col-sm-3 control-label">Ordered By</label>
                             <div class="col-sm-9">
-                                <input type="text" name="ordered-by" id="sign-ordered-by" class="form-control" value="{{ old('sign') }}">
+                                <input type="text" name="ordered_by" id="sign-ordered_by" class="form-control" value="{{ old('sign') }}">
                             </div>
                         </div>
 
