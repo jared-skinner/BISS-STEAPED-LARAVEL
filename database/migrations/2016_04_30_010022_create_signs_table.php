@@ -18,7 +18,7 @@ class CreateSignsTable extends Migration
             $table->string('comment');
             $table->string('route');
             $table->string('ordered_by');
-            $table->enum('brand' , ['PepsiCo','Rockstar','DPSG','Jarritos','Other']);
+            $table->string('brand');
             $table->double('price' , 6,2);
             $table->timestamps();
         });
