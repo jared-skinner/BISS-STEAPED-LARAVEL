@@ -15,7 +15,7 @@ class CreateSignsTable extends Migration
         Schema::create('signs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->index();
-            $table->string('comment');
+            $table->string('description');
             $table->string('route');
             $table->string('ordered_by');
             $table->string('brand');

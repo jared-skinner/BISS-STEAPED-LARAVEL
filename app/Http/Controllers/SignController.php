@@ -54,29 +54,37 @@ class SignController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
+            'description' => 'required|max:255',
+            'ordered-by' => 'required|max:255',
+            'route' => 'required|max:255',
+            'brand' => 'required|max:255',
+            'price' => 'numeric|required|max:999999.99',
         ]);
 
-        $request->user()->tasks()->create([
-            'name' => $request->name,
+        $request->user()->signs()->create([
+            'description' => $request->description,
+            'ordered-by' => $request->ordered_by,
+            'route' => $request->route,
+            'brand' => $request->brand,
+            'price' => $request->price,
         ]);
 
         return redirect('/signs');
     }
 
     /**
-     * Destroy the given task.
+     * Destroy the given sign.
      *
      * @param  Request  $request
-     * @param  Task  $task
+     * @param  Sign  $sign
      * @return Response
      */
-    public function destroy(Request $request, Task $task)
+    public function destroy(Request $request, Sign $sign)
     {
-        $this->authorize('destroy', $task);
+        $this->authorize('destroy', $sign);
 
-        $task->delete();
+        $sign->delete();
 
-        return redirect('/tasks');
+        return redirect('/signs');
     }
 }
