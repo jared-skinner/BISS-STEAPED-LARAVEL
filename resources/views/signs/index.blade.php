@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="col-sm-offset-2 col-sm-8">
+        <div class="col-sm-offset-1 col-sm-10">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     New Sign Order
@@ -18,40 +18,40 @@
 
                         <!-- Sign Name -->
                         <div class="form-group">
-                            <label for="sign-description" class="col-sm-3 control-label">Description</label>
-                            <div class="col-sm-9">
+                            <label for="sign-description" class="col-sm-2 control-label">Description</label>
+                            <div class="col-sm-10">
                                 <textarea name="description" id="sign-description" class="form-control">add description here</textarea>
                             </div>
                         </div>
 
                         <!-- Sign ordered-by -->
                         <div class="form-group">
-                            <label for="sign-ordered-by" class="col-sm-3 control-label">Ordered By</label>
-                            <div class="col-sm-9">
+                            <label for="sign-ordered-by" class="col-sm-2 control-label">Ordered By</label>
+                            <div class="col-sm-10">
                                 <input type="text" name="ordered_by" id="sign-ordered_by" class="form-control" value="{{ old('sign') }}">
                             </div>
                         </div>
 
                         <!-- Sign Route -->
                         <div class="form-group">
-                            <label for="sign-route" class="col-sm-3 control-label">Route Name/#</label>
-                            <div class="col-sm-9">
+                            <label for="sign-route" class="col-sm-2 control-label">Route Name/#</label>
+                            <div class="col-sm-10">
                                 <input type="text" name="route" id="sign-route" class="form-control" value="{{ old('sign') }}">
                             </div>
                         </div>
 
                         <!-- Sign Brand -->
                         <div class="form-group">
-                            <label for="sign-brand" class="col-sm-3 control-label">Brand</label>
-                            <div class="col-sm-9">
+                            <label for="sign-brand" class="col-sm-2 control-label">Brand</label>
+                            <div class="col-sm-10">
                                 <input type="text" name="brand" id="sign-brand" class="form-control" value="{{ old('sign') }}">
                             </div>
                         </div>
 
                         <!-- Sign Price -->
                         <div class="form-group">
-                            <label for="sign-price" class="col-sm-3 control-label">Price</label>
-                            <div class="col-sm-9">
+                            <label for="sign-price" class="col-sm-2 control-label">Price</label>
+                            <div class="col-sm-10">
                                 <input type="text" name="price" id="sign-price" class="form-control" value="{{ old('sign') }}">
                             </div>
                         </div>                        
@@ -76,15 +76,23 @@
                     </div>
 
                     <div class="panel-body">
-                        <table class="table table-striped sign-table">
+                        <table class="table table-striped">
                             <thead>
-                                <th>Sign</th>
+                                <th>Description</th>
+                                <th>Ordered By</th>
+                                <th>Route#/Name</th>
+                                <th>Brand</th>
+                                <th>Price</th>
                                 <th>&nbsp;</th>
                             </thead>
                             <tbody>
                                 @foreach ($signs as $sign)
                                     <tr>
                                         <td class="table-text"><div>{{ $sign->description }}</div></td>
+                                        <td class="table-text"><div>{{ $sign->ordered_by }}</div></td>
+                                        <td class="table-text"><div>{{ $sign->route }}</div></td>
+                                        <td class="table-text"><div>{{ $sign->brand }}</div></td>
+                                        <td class="table-text"><div>{{ $sign->price }}</div></td>
 
                                         <!-- Task Delete Button -->
                                         <td>
