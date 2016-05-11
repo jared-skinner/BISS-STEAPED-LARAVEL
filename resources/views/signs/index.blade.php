@@ -66,7 +66,46 @@
                         </div>
                     </form>
                 </div>
-            </div>           
+            </div>  
+
+<!-- Current Signs -->
+            @if (count($signs) > 0)
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        List of Signs
+                    </div>
+
+                    <div class="panel-body">
+                        <table class="table table-striped sign-table">
+                            <thead>
+                                <th>Sign</th>
+                                <th>&nbsp;</th>
+                            </thead>
+                            <tbody>
+                                @foreach ($signs as $sign)
+                                    <tr>
+                                        <td class="table-text"><div>{{ $sign->description }}</div></td>
+
+                                        <!-- Task Delete Button -->
+                                        <td>
+                                            <form action="/sign/{{ $sign->id }}" method="POST">
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}
+
+                                                <button type="submit" id="delete-sign-{{ $sign->id }}" class="btn btn-danger">
+                                                    <i class="fa fa-btn fa-trash"></i>Delete
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            @endif
+
+
         </div>
     </div>
 @endsection
